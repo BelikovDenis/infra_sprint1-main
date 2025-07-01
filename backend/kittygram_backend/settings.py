@@ -96,7 +96,11 @@ USE_L10N = True
 USE_TZ = True
 
 
-STATIC_URL = '/static/'
+# Замените стандартное значение 'static' на 'static_backend',
+# чтобы не было конфликта запросов к статике фронтенда и бэкенда.
+STATIC_URL = '/static_backend/'
+# Укажите директорию, куда бэкенд-приложение должно сложить статику.
+STATIC_ROOT = BASE_DIR / 'static_backend'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
